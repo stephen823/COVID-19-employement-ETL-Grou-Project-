@@ -39,34 +39,30 @@ CREATE TABLE cases_count (
 );
 
 
-
-
 DROP TABLE IF EXISTS mortality_count;
-CREATE TABLE “mortality_count” (
-    “sex” VARCHAR   NOT NULL,
-    “date” DATE   NOT NULL,
-    “mortality_count” INT   NOT NULL,
-    “category” VARCHAR   NOT NULL
+CREATE TABLE mortality_count (
+    sex VARCHAR   NOT NULL,
+    date DATE   NOT NULL,
+    mortality_count INT   NOT NULL,
+    category VARCHAR   NOT NULL
 );
-
 
 
 DROP TABLE IF EXISTS recovered_count;
-CREATE TABLE “recovered_count” (
-    “province” VARCHAR   NOT NULL,
-    “date” DATE   NOT NULL,
-    “cumulative_recovered” INT  NOT NULL,
-    “category” VARCHAR   NOT NULL
+CREATE TABLE recovered_count (
+    province VARCHAR   NOT NULL,
+    date DATE   NOT NULL,
+    cumulative_recovered INT  NOT NULL,
+    category VARCHAR   NOT NULL
 );
 
 
-
 DROP TABLE IF EXISTS testing_count;
-CREATE TABLE “testing_count” (
-    “province” VARCHAR   NOT NULL,
-    “date” DATE   NOT NULL,
-    “cumulative_testing” INT   NOT NULL,
-    “category” VARCHAR   NOT NULL
+CREATE TABLE testing_count (
+    province VARCHAR   NOT NULL,
+    date DATE   NOT NULL,
+    cumulative_testing INT   NOT NULL,
+    category VARCHAR   NOT NULL
 );
 
 
@@ -74,12 +70,20 @@ CREATE TABLE “testing_count” (
 
 ALTER TABLE cases_count
 ADD COLUMN id SERIAL PRIMARY KEY;
+
 ALTER TABLE mortality_count
 ADD COLUMN id SERIAL PRIMARY KEY;
+
 ALTER TABLE recovered_count
 ADD COLUMN id SERIAL PRIMARY KEY;
+
 ALTER TABLE testing_count
 ADD COLUMN id SERIAL PRIMARY KEY;
+
+
+
+
+
 SELECT * FROM cases_count;
 SELECT * FROM mortality_count;
 SELECT * FROM recovered_count;
